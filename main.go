@@ -5,11 +5,24 @@ import (
 	"sort"
 
 	calories "github.com/geordie/adventofcode2022/calories"
+	rps "github.com/geordie/adventofcode2022/rockpaperscissors"
 )
 
 func main() {
-	day1puzzle1()
-	day1puzzle2()
+	day2puzzle1()
+	day2puzzle2()
+}
+
+func day2puzzle2() {
+	rpsRounds := rps.ParseDay2Puzzle2Input()
+	iScore := rpsRounds.CalculateScore()
+	fmt.Println("DAY 2, PUZZLE 2 ANSWER: ", iScore)
+}
+
+func day2puzzle1() {
+	rpsRounds := rps.ParseDay2Puzzle1Input()
+	iScore := rpsRounds.CalculateScore()
+	fmt.Println("DAY 2, PUZZLE 1 ANSWER: ", iScore)
 }
 
 func day1puzzle2() {
