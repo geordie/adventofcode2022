@@ -14,7 +14,7 @@ func main() {
 }
 
 func day3puzzle1() {
-	rucksacks.ParseDay3Puzzle1Input()
+	rucksacks.SolveDay3Puzzle1()
 }
 
 func day2puzzle2() {

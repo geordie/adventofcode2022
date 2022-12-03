@@ -15,9 +15,7 @@ type Rucksack struct {
 	Comparment2 Comparment
 }
 
-type Rucksacks []Rucksack
-
-func ParseDay3Puzzle1Input() Rucksacks {
+func SolveDay3Puzzle1() {
 
 	file, err := os.Open("input/day3.txt")
 	if err != nil {
@@ -38,7 +36,7 @@ func ParseDay3Puzzle1Input() Rucksacks {
 		s2 := s[iCompartmentSize:iRucksackSize]
 
 		rucksack := Rucksack{Comparment1: []byte(s1), Comparment2: []byte(s2)}
-		iCommonItem := rucksack.FindCommonItem()
+		iCommonItem := rucksack.findCommonItemBetweenCompartments()
 
 		iSum += iCommonItem
 
@@ -49,11 +47,9 @@ func ParseDay3Puzzle1Input() Rucksacks {
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
-
-	return rucksacks
 }
 
-func (r *Rucksack) FindCommonItem() int {
+func (r *Rucksack) findCommonItemBetweenCompartments() int {
 	iElemVal := 0
 	for _, elem := range r.Comparment1 {
 		if bytes.Contains(r.Comparment2, []byte{elem}) {
