@@ -10,7 +10,11 @@ import (
 )
 
 func main() {
-	day3puzzle1()
+	day3puzzle2()
+}
+
+func day3puzzle2() {
+	rucksacks.SolveDay3Puzzle2()
 }
 
 func day3puzzle1() {

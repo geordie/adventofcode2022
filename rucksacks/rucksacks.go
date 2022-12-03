@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 )
 
 type Comparment []byte
@@ -13,6 +14,37 @@ type Comparment []byte
 type Rucksack struct {
 	Comparment1 Comparment
 	Comparment2 Comparment
+}
+
+func SolveDay3Puzzle2() {
+
+	file, err := os.Open("input/day3.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	scanner := bufio.NewScanner(file)
+
+	iSum := 0
+	for scanner.Scan() {
+
+		batch := make([]string, 3)
+		batch[0] = scanner.Text()
+
+		for i := 1; i < 3; i++ {
+			scanner.Scan()
+			batch[i] = scanner.Text()
+		}
+
+		iCommonItem := findCommonBatchElement(batch)
+
+		iSum += iCommonItem
+	}
+
+	fmt.Println("DAY 3, PUZZLE 2 ANSWER: ", iSum)
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func SolveDay3Puzzle1() {
@@ -23,7 +55,6 @@ func SolveDay3Puzzle1() {
 	}
 
 	scanner := bufio.NewScanner(file)
-	rucksacks := make([]Rucksack, 0)
 
 	iSum := 0
 	for scanner.Scan() {
@@ -40,13 +71,31 @@ func SolveDay3Puzzle1() {
 
 		iSum += iCommonItem
 
-		rucksacks = append(rucksacks, rucksack)
 	}
 
 	fmt.Println("DAY 3, PUZZLE 1 ANSWER: ", iSum)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func findCommonBatchElement(batch []string) int {
+	iElemVal := 0
+	for _, ch := range batch[0] {
+		if strings.Contains(batch[1], string(ch)) &&
+			strings.Contains(batch[2], string(ch)) {
+
+			iCharVal := int(ch)
+			// uppercase
+			if iCharVal <= 90 {
+				return iCharVal - 38
+			} else {
+				// lowercase
+				return iCharVal - 96
+			}
+		}
+	}
+	return iElemVal
 }
 
 func (r *Rucksack) findCommonItemBetweenCompartments() int {
