@@ -6,11 +6,15 @@ import (
 
 	calories "github.com/geordie/adventofcode2022/calories"
 	rps "github.com/geordie/adventofcode2022/rockpaperscissors"
+	rucksacks "github.com/geordie/adventofcode2022/rucksacks"
 )
 
 func main() {
-	day2puzzle1()
-	day2puzzle2()
+	day3puzzle1()
+}
+
+func day3puzzle1() {
+	rucksacks.ParseDay3Puzzle1Input()
 }
 
 func day2puzzle2() {
