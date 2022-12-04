@@ -11,8 +11,8 @@ import (
 )
 
 type Range struct {
-	rangeStart int
-	rangeEnd   int
+	Start int
+	End   int
 }
 
 type RangePair struct {
@@ -71,28 +71,18 @@ func SolveDay4Puzzle2() {
 	for scanner.Scan() {
 		sLine := scanner.Text()
 
-		// fmt.Println("LINE:", sLine)
-
 		ranges := strings.Split(sLine, ",")
 
-		sRange1 := ranges[0]
-		range1Bounds := strings.Split(sRange1, "-")
-		iRange1Start := util.GetIntFromString(range1Bounds[0])
-		iRange1End := util.GetIntFromString(range1Bounds[1])
-		// fmt.Println("Range1: ", iRange1Start, iRange1End)
+		range1 := Range{}
+		range1.parseRange(ranges[0])
 
-		sRange2 := ranges[1]
-		range2Bounds := strings.Split(sRange2, "-")
-		iRange2Start := util.GetIntFromString(range2Bounds[0])
-		iRange2End := util.GetIntFromString(range2Bounds[1])
-		// fmt.Println("Range2: ", iRange2Start, iRange2End)
+		range2 := Range{}
+		range2.parseRange(ranges[1])
 
-		if iRange1Start <= iRange2Start && iRange1End >= iRange2Start {
+		if range1.Start <= range2.Start && range1.End >= range2.Start {
 			iCount++
-			// fmt.Println("OVERLAP 1")
-		} else if iRange2Start <= iRange1Start && iRange2End >= iRange1Start {
+		} else if range2.Start <= range1.Start && range2.End >= range1.Start {
 			iCount++
-			// fmt.Println("OVERLAP 2")
 		}
 	}
 
@@ -100,4 +90,15 @@ func SolveDay4Puzzle2() {
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func (r *Range) parseRange(sRange string) {
+	range1Bounds := strings.Split(sRange, "-")
+
+	if len(range1Bounds) != 2 {
+		return
+	}
+
+	r.Start = util.GetIntFromString(range1Bounds[0])
+	r.End = util.GetIntFromString(range1Bounds[1])
 }
