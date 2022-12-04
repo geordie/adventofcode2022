@@ -1,4 +1,4 @@
-package day4_sections
+package sections
 
 import (
 	"bufio"
