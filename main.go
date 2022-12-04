@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	calories "github.com/geordie/adventofcode2022/calories"
+	calories "github.com/geordie/adventofcode2022/day1"
 	sections "github.com/geordie/adventofcode2022/day4"
 	rps "github.com/geordie/adventofcode2022/rockpaperscissors"
 	rucksacks "github.com/geordie/adventofcode2022/rucksacks"
