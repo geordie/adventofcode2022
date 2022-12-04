@@ -80,7 +80,6 @@ func SolveDay3Puzzle1() {
 }
 
 func findCommonBatchElement(batch []string) int {
-	iElemVal := 0
 	for _, ch := range batch[0] {
 		if strings.Contains(batch[1], string(ch)) &&
 			strings.Contains(batch[2], string(ch)) {
@@ -95,7 +94,7 @@ func findCommonBatchElement(batch []string) int {
 			}
 		}
 	}
-	return iElemVal
+	return 0
 }
 
 func (r *Rucksack) findCommonItemBetweenCompartments() int {
