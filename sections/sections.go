@@ -15,11 +15,6 @@ type Range struct {
 	End   int
 }
 
-type RangePair struct {
-	range1 Range
-	range2 Range
-}
-
 func SolveDay4Puzzle1() {
 
 	file, err := os.Open("input/day4.txt")
@@ -41,9 +36,7 @@ func SolveDay4Puzzle1() {
 		range2 := Range{}
 		range2.parseRange(ranges[1])
 
-		if range1.Start <= range2.Start && range1.End >= range2.End {
-			iCount++
-		} else if range2.Start <= range1.Start && range2.End >= range1.End {
+		if range1.contains(range2) || range2.contains(range1) {
 			iCount++
 		}
 	}
@@ -75,9 +68,7 @@ func SolveDay4Puzzle2() {
 		range2 := Range{}
 		range2.parseRange(ranges[1])
 
-		if range1.Start <= range2.Start && range1.End >= range2.Start {
-			iCount++
-		} else if range2.Start <= range1.Start && range2.End >= range1.Start {
+		if range1.overlaps(range2) {
 			iCount++
 		}
 	}
@@ -97,4 +88,20 @@ func (r *Range) parseRange(sRange string) {
 
 	r.Start = util.GetIntFromString(range1Bounds[0])
 	r.End = util.GetIntFromString(range1Bounds[1])
+}
+
+func (r1 *Range) overlaps(r2 Range) bool {
+	if r1.Start <= r2.Start && r1.End >= r2.Start {
+		return true
+	} else if r2.Start <= r1.Start && r2.End >= r1.Start {
+		return true
+	}
+	return false
+}
+
+func (r1 *Range) contains(r2 Range) bool {
+	if r1.Start <= r2.Start && r1.End >= r2.End {
+		return true
+	}
+	return false
 }
