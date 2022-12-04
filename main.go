@@ -5,9 +5,9 @@ import (
 	"sort"
 
 	calories "github.com/geordie/adventofcode2022/day1"
+	rps "github.com/geordie/adventofcode2022/day2"
+	rucksacks "github.com/geordie/adventofcode2022/day3"
 	sections "github.com/geordie/adventofcode2022/day4"
-	rps "github.com/geordie/adventofcode2022/rockpaperscissors"
-	rucksacks "github.com/geordie/adventofcode2022/rucksacks"
 )
 
 func main() {
