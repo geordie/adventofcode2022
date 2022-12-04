@@ -35,19 +35,15 @@ func SolveDay4Puzzle1() {
 
 		ranges := strings.Split(sLine, ",")
 
-		sRange1 := ranges[0]
-		range1Bounds := strings.Split(sRange1, "-")
-		iRange1Start := util.GetIntFromString(range1Bounds[0])
-		iRange1End := util.GetIntFromString(range1Bounds[1])
+		range1 := Range{}
+		range1.parseRange(ranges[0])
 
-		sRange2 := ranges[1]
-		range2Bounds := strings.Split(sRange2, "-")
-		iRange2Start := util.GetIntFromString(range2Bounds[0])
-		iRange2End := util.GetIntFromString(range2Bounds[1])
+		range2 := Range{}
+		range2.parseRange(ranges[1])
 
-		if iRange1Start <= iRange2Start && iRange1End >= iRange2End {
+		if range1.Start <= range2.Start && range1.End >= range2.End {
 			iCount++
-		} else if iRange2Start <= iRange1Start && iRange2End >= iRange1End {
+		} else if range2.Start <= range1.Start && range2.End >= range1.End {
 			iCount++
 		}
 	}
