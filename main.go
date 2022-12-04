@@ -7,10 +7,20 @@ import (
 	calories "github.com/geordie/adventofcode2022/calories"
 	rps "github.com/geordie/adventofcode2022/rockpaperscissors"
 	rucksacks "github.com/geordie/adventofcode2022/rucksacks"
+	sections "github.com/geordie/adventofcode2022/sections"
 )
 
 func main() {
-	day3puzzle2()
+	day4puzzle1()
+	day4puzzle2()
+}
+
+func day4puzzle2() {
+	sections.SolveDay4Puzzle2()
+}
+
+func day4puzzle1() {
+	sections.SolveDay4Puzzle1()
 }
 
 func day3puzzle2() {
