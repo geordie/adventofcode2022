@@ -8,11 +8,20 @@ import (
 	rps "github.com/geordie/adventofcode2022/day2"
 	rucksacks "github.com/geordie/adventofcode2022/day3"
 	sections "github.com/geordie/adventofcode2022/day4"
+	crates "github.com/geordie/adventofcode2022/day5"
 )
 
 func main() {
-	day4puzzle1()
-	day4puzzle2()
+	day5puzzle2()
+	day5puzzle1()
+}
+
+func day5puzzle2() {
+	crates.SolveDay5Puzzle2()
+}
+
+func day5puzzle1() {
+	crates.SolveDay5Puzzle1()
 }
 
 func day4puzzle2() {
