@@ -9,11 +9,20 @@ import (
 	rucksacks "github.com/geordie/adventofcode2022/day3"
 	sections "github.com/geordie/adventofcode2022/day4"
 	crates "github.com/geordie/adventofcode2022/day5"
+	signals "github.com/geordie/adventofcode2022/day6"
 )
 
 func main() {
-	day5puzzle2()
-	day5puzzle1()
+	day6puzzle1()
+	day6puzzle2()
+}
+
+func day6puzzle2() {
+	signals.SolveDay6Puzzle2()
+}
+
+func day6puzzle1() {
+	signals.SolveDay6Puzzle1()
 }
 
 func day5puzzle2() {
