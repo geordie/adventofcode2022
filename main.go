@@ -10,11 +10,20 @@ import (
 	sections "github.com/geordie/adventofcode2022/day4"
 	crates "github.com/geordie/adventofcode2022/day5"
 	signals "github.com/geordie/adventofcode2022/day6"
+	directories "github.com/geordie/adventofcode2022/day7"
 )
 
 func main() {
-	day6puzzle1()
-	day6puzzle2()
+	day7puzzle1()
+	day7puzzle2()
+}
+
+func day7puzzle2() {
+	directories.SolveDay7Puzzle2()
+}
+
+func day7puzzle1() {
+	directories.SolveDay7Puzzle1()
 }
 
 func day6puzzle2() {
