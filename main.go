@@ -11,11 +11,15 @@ import (
 	crates "github.com/geordie/adventofcode2022/day5"
 	signals "github.com/geordie/adventofcode2022/day6"
 	directories "github.com/geordie/adventofcode2022/day7"
+	forest "github.com/geordie/adventofcode2022/day8"
 )
 
 func main() {
-	day7puzzle1()
-	day7puzzle2()
+	day8puzzle1()
+}
+
+func day8puzzle1() {
+	forest.SolveDay7Puzzle1()
 }
 
 func day7puzzle2() {
