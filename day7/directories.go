@@ -116,7 +116,8 @@ func (nodeCur *Node) parseCommand(sLine string, scanner *bufio.Scanner) *Node {
 				nodeCur.children = append(nodeCur.children, file)
 			}
 		}
-	} else if sLine[0:5] == "$ cd " { // Handle cd commands
+		// Handle cd commands
+	} else if sLine[0:5] == "$ cd " {
 		sNextDir := sLine[5:]
 		if sNextDir == "/" {
 			nodeCur = fs
@@ -197,6 +198,7 @@ func (node *Node) findMinDeletableDirectory(iMinSize int) *Node {
 		}
 	}
 
+	// Ignore files (size > 0)
 	if node.size > 0 {
 		return nodeMinDeletable
 	} else if node.size == 0 && node.totalSize >= iMinSize {
