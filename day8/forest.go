@@ -11,7 +11,7 @@ import (
 
 type Forest [][]int
 
-func SolveDay7Puzzle2() {
+func SolveDay8Puzzle2() {
 	solvePuzzle2()
 }
 
@@ -48,7 +48,7 @@ func solvePuzzle2() {
 	}
 }
 
-func SolveDay7Puzzle1() {
+func SolveDay8Puzzle1() {
 	solvePuzzle1()
 }
 
