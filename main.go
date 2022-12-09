@@ -16,6 +16,11 @@ import (
 
 func main() {
 	day8puzzle1()
+	day8puzzle2()
+}
+
+func day8puzzle2() {
+	forest.SolveDay7Puzzle2()
 }
 
 func day8puzzle1() {
