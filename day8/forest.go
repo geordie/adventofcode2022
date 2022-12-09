@@ -42,7 +42,7 @@ func solvePuzzle2() {
 	// Find visible trees in the forest
 	iMaxScenicScore := forest.findMaxScenicScore()
 
-	fmt.Println("DAY 7, PUZZLE 2 ANSWER: ", iMaxScenicScore)
+	fmt.Println("DAY 8, PUZZLE 2 ANSWER: ", iMaxScenicScore)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
@@ -79,7 +79,7 @@ func solvePuzzle1() {
 	// Find visible trees in the forest
 	iVisibleTrees := forest.findVisible()
 
-	fmt.Println("DAY 7, PUZZLE 1 ANSWER: ", iVisibleTrees)
+	fmt.Println("DAY 8, PUZZLE 1 ANSWER: ", iVisibleTrees)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
