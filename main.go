@@ -12,19 +12,23 @@ import (
 	signals "github.com/geordie/adventofcode2022/day6"
 	directories "github.com/geordie/adventofcode2022/day7"
 	forest "github.com/geordie/adventofcode2022/day8"
+	ropes "github.com/geordie/adventofcode2022/day9"
 )
 
 func main() {
-	day8puzzle1()
-	day8puzzle2()
+	day9puzzle1()
+}
+
+func day9puzzle1() {
+	ropes.SolveDay9Puzzle1()
 }
 
 func day8puzzle2() {
-	forest.SolveDay7Puzzle2()
+	forest.SolveDay8Puzzle2()
 }
 
 func day8puzzle1() {
-	forest.SolveDay7Puzzle1()
+	forest.SolveDay8Puzzle1()
 }
 
 func day7puzzle2() {
